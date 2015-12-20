@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/projek-xyz/slim-flysystem/master.svg?branch=master&style=flat-square)](https://travis-ci.org/projek-xyz/slim-flysystem)
 [![Coveralls](https://img.shields.io/coveralls/projek-xyz/slim-flysystem/master.svg?style=flat-square)](https://coveralls.io/github/projek-xyz/slim-flysystem)
 [![Code Climate](https://img.shields.io/codeclimate/github/projek-xyz/slim-flysystem.svg?style=flat-square)](https://codeclimate.com/github/projek-xyz/slim-flysystem)
-[![Code Quality](https://img.shields.io/sensiolabs/i/0b18f66c-8041-47c3-8004-6eef2b940d30.svg?style=flat-square)](https://insight.sensiolabs.com/projects/0b18f66c-8041-47c3-8004-6eef2b940d30)
+[![Code Quality](https://img.shields.io/sensiolabs/i/ff54e692-bb1c-4faf-afd0-c681a0e845dd.svg?style=flat-square)](https://insight.sensiolabs.com/projects/ff54e692-bb1c-4faf-afd0-c681a0e845dd)
 
 This is a Slim Framework 3.x component helper that provide FlySystem integration.
 
@@ -29,13 +29,15 @@ $app = new \Slim\App();
 $container = $app->getContainer();
 
 // Register FlySystem helper:
-// Option 1, using FlySystemProvider
-$container->register(new \Projek\Slim\FlySystemProvider);
+// Option 1, using FlysystemProvider
+$container->register(new \Projek\Slim\FlysystemProvider);
 
 // Option 2, using Closure
 $container['fs'] = function ($c) {
-    $fs = new \Projek\Slim\FlySystem([
-        // ...
+    $fs = new \Projek\Slim\Flysystem([
+        'local' => [
+            'path' => 'path/to/your/resources',
+        ]
     ]);
 
     return $fs;
@@ -46,7 +48,7 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
     // Read a file.
     $this->fs->read('path/to/file');
 
-    return $response->write('Some output');
+    return $response;
 });
 
 // Run app
