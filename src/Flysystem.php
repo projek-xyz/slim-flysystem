@@ -78,9 +78,11 @@ class Flysystem
     {
         if (isset($this->settings[$path]['path'])) {
             $this->fs = $this->mounts->getFilesystem($path);
-        } else {
-            $this->fs = new Filesystem(new Adapter\Local($path));
+
+            return $this;
         }
+
+        $this->fs = new Filesystem(new Adapter\Local($path));
 
         return $this;
     }
@@ -98,19 +100,17 @@ class Flysystem
     {
         if (isset($this->settings[$host]['host'])) {
             $this->fs = $this->mounts->getFilesystem($host);
-        } else {
-            $opts = [
-                'host' => $host,
-                'username' => $username,
-                'password' => $password,
-            ];
 
-            if ($opt) {
-                $opts = array_merge($opt, $opts);
-            }
-
-            $this->fs = new Filesystem(new Adapter\Ftp($opts));
+            return $this;
         }
+
+        $opts = array_merge($opt, [
+            'host' => $host,
+            'username' => $username,
+            'password' => $password,
+        ]);
+
+        $this->fs = new Filesystem(new Adapter\Ftp($opts));
 
         return $this;
     }
