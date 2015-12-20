@@ -4,6 +4,7 @@ namespace Projek\Slim;
 use League\Flysystem\Filesystem;
 use League\Flysystem\MountManager;
 use League\Flysystem\Adapter;
+use LogicException;
 
 class Flysystem
 {
@@ -27,7 +28,7 @@ class Flysystem
     protected $mounts;
 
     /**
-     * Create new Projek\Slim\Plates instance
+     * Create new Projek\Slim\Flysystem instance
      *
      * @param string[] $settings
      */
@@ -87,7 +88,10 @@ class Flysystem
     /**
      * Mount FTP
      *
-     * @param  string $host
+     * @param  string   $host
+     * @param  string   $username
+     * @param  string   $password
+     * @param  string[] $opt
      * @return $this
      */
     public function mountFtp($host, $username = '', $password = '', array $opt = [])
@@ -304,7 +308,7 @@ class Flysystem
      * Delete a directory.
      *
      * @param  string $dirname
-     * @throws RootViolationException Thrown if $dirname is empty.
+     * @throws \League\Flysystem\RootViolationException Thrown if $dirname is empty.
      * @return bool True on success, false on failure.
      */
     public function deleteDir($dirname)
