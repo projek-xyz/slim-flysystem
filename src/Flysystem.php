@@ -153,13 +153,13 @@ class Flysystem
      * Write a new file using a stream.
      *
      * @param  string   $path     The path of the new file.
-     * @param  resource $resource The file handle.
+     * @param  resource $contents The file handle.
      * @param  array    $config   An optional configuration array.
      * @throws \InvalidArgumentException
      * @throws \League\Flysystem\FileExistsException
      * @return bool True on success, false on failure.
      */
-    public function writeStream($path, $resource, array $config = [])
+    public function writeStream($path, $contents, array $config = [])
     {
         $filesystem = $this->fs ?: $this->mounts;
 
@@ -185,12 +185,12 @@ class Flysystem
      * Create a file or update if exists.
      *
      * @param  string   $path     The path to the file.
-     * @param  resource $resource The file handle.
+     * @param  resource $contents The file handle.
      * @param  array    $config   An optional configuration array.
      * @throws \InvalidArgumentException
      * @return bool True on success, false on failure.
      */
-    public function putStream($path, $resource, array $config = [])
+    public function putStream($path, $contents, array $config = [])
     {
         $filesystem = $this->fs ?: $this->mounts;
 
@@ -217,13 +217,13 @@ class Flysystem
      * Update an existing file using a stream.
      *
      * @param  string   $path     The path of the existing file.
-     * @param  resource $resource The file handle.
+     * @param  resource $contents The file handle.
      * @param  array    $config   An optional configuration array.
      * @throws \InvalidArgumentException
      * @throws \League\Flysystem\FileNotFoundException
      * @return bool True on success, false on failure.
      */
-    public function updateStream($path, $resource, array $config = [])
+    public function updateStream($path, $contents, array $config = [])
     {
         $filesystem = $this->fs ?: $this->mounts;
 
