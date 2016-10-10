@@ -24,7 +24,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->settings['local']['path'] = __DIR__.'/asset';
+        $this->settings['local']['path'] = dirname(__DIR__).'/asset';
         $this->fs = new Flysystem($this->settings);
     }
 }
