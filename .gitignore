@@ -1,34 +1,41 @@
 # Generic
 # --------------------------
+Thumbs.db
 Desktop.ini
-Icon?
 .directory
+.DS_Store
+._*
 *.cache
-*.old
+*.crt
 *.log
+*.old
+*.key
+*.pem
+*.tmp
 *.zip
 *~
 
 # Development files
 # --------------------------
 .php-version
-tests/clover.xml
-coveralls-upload.json
+.tool-versions
 
 # Dependency folders
 # --------------------------
-composer.lock
-node_modules/
-vendor/
+node_modules
+package-lock.json
+pnpm-lock.yaml
+vendor
+yarn.lock
 
 # IDE Project Configurations
 # --------------------------
 .idea
 .settings
+.vscode
 .project
 *.sublime-*
 
 # But Keep these
 # --------------------------
 !.gitkeep
-
