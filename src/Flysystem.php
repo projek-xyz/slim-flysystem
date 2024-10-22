@@ -62,6 +62,13 @@ class Flysystem
         return $this;
     }
 
+    /**
+     * Magic method to connect to filesystem for convenience
+     *
+     * @param  string $method Flysystem method
+     * @param  array $args Flysystem arguments
+     * @return mixed
+     */
     public function __call($method, $args)
     {
         /**
@@ -75,7 +82,7 @@ class Flysystem
     /**
      * Get the Flysystem instance with Local adapter
      *
-     * @return \League\Flysystem\Filesystem
+     * @return \League\Flysystem\FilesystemInterface
      */
     public function getFlysystem()
     {
