@@ -1,0 +1,10 @@
+# Test Report Files
+# --------------------------
+*.local.php
+benchmark.php
+codeclimate.*.json
+codeclimate.json
+coveralls.*.json
+coveralls.json
+lcov.*.info
+lcov.info

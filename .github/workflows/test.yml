@@ -56,14 +56,8 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-progress --no-suggest
 
-      # https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
-      # https://github.com/deivid-rodriguez/pry-byebug/blob/377e5b7d229a157bb896f21d776f71fc389a5c00/.github/workflows/ubuntu.yml#L46-L57
-      - name: Set ENV for CodeClimate (pull_request)
-        if: github.event_name == 'pull_request'
-        run: echo "GIT_BRANCH=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
-
       - name: Run tests
-        run: composer test
+        run: composer spec
 
       - name: Generate reports for Coveralls
         if: needs.prepare.outputs.has-coveralls == '1'
@@ -73,7 +67,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: php-${{ matrix.php }}
-          file: test/lcov.info
+          file: tests/lcov.info
           parallel: true
 
       - name: Generate reports for CodeClimate
@@ -85,7 +79,7 @@ jobs:
           CC_TEST_REPORTER_URL: ${{ vars.CC_TEST_REPORTER_URL }}
         run: |
           curl -LSs $CC_TEST_REPORTER_URL > ./cc-test-reporter && chmod +x ./cc-test-reporter
-          ./cc-test-reporter format-coverage -t lcov -o $CODECLIMATE_REPORT test/lcov.info
+          ./cc-test-reporter format-coverage -t lcov -o $CODECLIMATE_REPORT tests/lcov.info
 
       - name: Save Coverage Reports
         if: needs.prepare.outputs.has-codeclimate == '1'
