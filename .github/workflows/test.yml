@@ -62,8 +62,8 @@ jobs:
         if: github.event_name == 'pull_request'
         run: echo "GIT_BRANCH=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
 
-      - name: Spec
-        run: composer spec
+      - name: Run tests
+        run: composer test
 
       - name: Generate reports for Coveralls
         if: needs.prepare.outputs.has-coveralls == '1'
