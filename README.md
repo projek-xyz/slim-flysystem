@@ -1,12 +1,12 @@
-# FlySystem Integration for Slim micro framework 3
+[![Version](https://img.shields.io/packagist/v/projek-xyz/slim-flysystem?style=flat-square)](https://packagist.org/packages/projek-xyz/slim-flysystem)
+[![Lisence](https://img.shields.io/github/license/projek-xyz/slim-flysystem?style=flat-square)](https://github.com/projek-xyz/slim-flysystem/blob/main/LICENSE)
+[![Actions Status](https://img.shields.io/github/actions/workflow/status/projek-xyz/slim-flysystem/test.yml?branch=main&style=flat-square)](https://github.com/projek-xyz/slim-flysystem/actions)
+[![Coveralls](https://img.shields.io/coveralls/projek-xyz/slim-flysystem/master.svg?style=flat-square&logo=coveralls)](https://coveralls.io/github/projek-xyz/slim-flysystem)
+[![Code Climate](https://img.shields.io/codeclimate/coverage/projek-xyz/slim-flysystem.svg?style=flat-square&logo=code-climate)](https://codeclimate.com/github/projek-xyz/slim-flysystem/coverage)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/projek-xyz/slim-flysystem?style=flat-square&logo=code-climate)](https://codeclimate.com/github/projek-xyz/slim-flysystem/maintainability)
+[![SymfonyInsight Grade](https://img.shields.io/symfony/i/grade/847662a6-71b8-4e7b-ae16-d7f98b7eae80?style=flat-square&logo=symfony)](https://insight.symfony.com/projects/847662a6-71b8-4e7b-ae16-d7f98b7eae80)
 
-[![LICENSE](https://img.shields.io/packagist/l/projek-xyz/slim-flysystem.svg?style=flat-square)](LICENSE.md)
-[![VERSION](https://img.shields.io/packagist/v/projek-xyz/slim-flysystem.svg?style=flat-square)](https://github.com/projek-xyz/slim-flysystem/releases)
-[![Build Status](https://img.shields.io/travis/projek-xyz/slim-flysystem/master.svg?branch=master&style=flat-square)](https://travis-ci.org/projek-xyz/slim-flysystem)
-[![Coveralls](https://img.shields.io/coveralls/projek-xyz/slim-flysystem/master.svg?style=flat-square)](https://coveralls.io/github/projek-xyz/slim-flysystem)
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/projek-xyz/slim-flysystem.svg?style=flat-square)](https://codeclimate.com/github/projek-xyz/slim-flysystem/coverage)
-[![Code Climate](https://img.shields.io/codeclimate/github/projek-xyz/slim-flysystem.svg?style=flat-square)](https://codeclimate.com/github/projek-xyz/slim-flysystem)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/81ad8017-5a5c-4187-81ab-d7c37ea83c4c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/81ad8017-5a5c-4187-81ab-d7c37ea83c4c)
+# FlySystem Integration for Slim micro framework 3
 
 Access your Slim 3 application file system using FlySystem.
 
