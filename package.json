@@ -1,0 +1,21 @@
+{
+    "name": "@projek-xyz/slim-flysystem",
+    "private": true,
+    "version": "0.2.2",
+    "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
+    "repository": "github:projek-xyz/slim-flysystem",
+    "scripts": {
+        "release": "standard-version -s"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.5",
+        "@feryardiant/commitlint-config": "~0.2.1",
+        "standard-version": "^9.0"
+    },
+    "commitlint": {
+        "extends": [
+            "@feryardiant/commitlint-config"
+        ]
+    },
+    "standard-version": {}
+}
